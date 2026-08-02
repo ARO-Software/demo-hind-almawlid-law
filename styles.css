@@ -671,13 +671,17 @@ a{color:inherit;text-decoration:none}
 
 @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes crestIn{from{opacity:0;transform:translateY(14px) scale(.94)}to{opacity:1;transform:none}}
+/* The wordmark is the LCP element. Never start it at opacity:0 — an unpainted
+   LCP candidate defers Largest Contentful Paint by the whole animation delay
+   (measured: +4.3s render delay). Transform-only keeps it painted from frame 1. */
+@keyframes riseSolid{from{transform:translateY(18px)}to{transform:none}}
 
 /* Gated on .js for the same reason as .reveal: if the entrance never starts
    (JS off, render-blocking stylesheet, failed script) the hero must simply be
    visible rather than held at opacity 0. */
 .js .crest{animation:crestIn 1s var(--ease) both}
 .js .hero__eyebrow{animation:rise .8s var(--ease) .14s both}
-.js .hero__name{animation:rise .9s var(--ease) .24s both}
+.js .hero__name{animation:riseSolid .9s var(--ease) both}
 .js .hero__sub{animation:rise .9s var(--ease) .34s both}
 .js .hero__lede{animation:rise .9s var(--ease) .44s both}
 .js .hero__cta{animation:rise .9s var(--ease) .54s both}
