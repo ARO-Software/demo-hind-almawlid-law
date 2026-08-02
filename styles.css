@@ -555,7 +555,8 @@ a{color:inherit;text-decoration:none}
 .hrow__d{font-family:var(--ff-u);font-size:.86rem;color:rgba(251,248,243,.9)}
 .hrow__rule{flex:1 1 40px;height:1px;background:rgba(231,206,134,.2);min-width:24px}
 /* plain RTL text — no isolation on a time range, it would flip ص/م */
-.hrow__t{font-family:var(--ff-d);font-size:clamp(1.05rem,4.2vw,1.35rem);color:var(--gold-hi)}
+/* weight 700 so only one Amiri weight is ever downloaded (~120KB saved) */
+.hrow__t{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.05rem,4.2vw,1.35rem);color:var(--gold-hi)}
 .hrow--off .hrow__t{color:rgba(251,248,243,.5);font-size:1rem}
 .hnote{
   margin-block-start:20px;
