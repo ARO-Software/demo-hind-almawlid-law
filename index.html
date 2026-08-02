@@ -17,7 +17,11 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232E0F35'/%3E%3Cpath d='M8.5 26V14.5c0-5 3-8.2 7.5-9.4 4.5 1.2 7.5 4.4 7.5 9.4V26' fill='none' stroke='%23C9A227' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M12 19h8' stroke='%23C9A227' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Noto+Kufi+Arabic:wght@500&family=Tajawal:wght@300;400;500&display=swap">
+<!-- fonts load without blocking first paint; display=swap means text is readable
+     immediately in the fallback and upgrades to Amiri/Tajawal when they arrive -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Noto+Kufi+Arabic:wght@500&family=Tajawal:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Noto+Kufi+Arabic:wght@500&family=Tajawal:wght@300;400;500&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Noto+Kufi+Arabic:wght@500&family=Tajawal:wght@300;400;500&display=swap"></noscript>
 <link rel="stylesheet" href="styles.css">
 <script>
   /* Only opt into hidden-then-reveal when we can actually reveal, and drop
